@@ -35,11 +35,10 @@ namespace Timestamp
             }
             catch (Exception exception)
             {
-                this.LogError("Error occurred: " + exception);
+                BuildEngine.LogErrorEvent(new BuildErrorEventArgs("", "", null, 0, 0, 0, 0, "Error occurred: " + exception, "", "Timestamp"));
                 return false;
             }
         }
-
 
         void CreateTempAssemblyInfo()
         {

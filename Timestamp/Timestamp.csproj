@@ -51,7 +51,6 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="BuildLogger.cs" />
     <Compile Include="TempFileTracker.cs" />
     <EmbeddedResource Include="TimestampAttribute.cs" />
     <Compile Include="AddTimestamp.cs" />
