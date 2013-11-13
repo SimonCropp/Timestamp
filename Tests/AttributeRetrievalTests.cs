@@ -8,11 +8,11 @@ public class AttributeRetrievalTests
     [Test]
     public void DotNet4()
     {
-        var attribute = (dynamic)Assembly.GetExecutingAssembly()
+        var attribute = Assembly.GetExecutingAssembly()
             .GetCustomAttributes(false)
             .First(x => x.GetType().Name == "TimestampAttribute");
 
-        string timestamp = attribute.Timestamp;
+        var timestamp =  (string) attribute.GetType().GetProperty("Timestamp").GetValue(attribute);
         Assert.AreEqual("2007-04-30", timestamp);
     }
 
