@@ -5,7 +5,7 @@ Adds a build timestamp to an assembly.
 
 ### What's wrong with using Modified or Created date
 
-File timestamps are not reliable since they can changed by various various mechanisms, for example when being transferred over the wire.
+File timestamps are not reliable since they can changed by various mechanisms, for example when being transferred over the wire.
 
 ## What it actually does
 
@@ -78,9 +78,9 @@ If you are on .net 4.5 you can make use of the [AttributeType](http://msdn.micro
             .ToUniversalTime();
     }
 
-## How do it test that it has worked
+## How do I test that it has worked
 
-Since all this happens at the compile time with no code seen by you it is advisable to add a unit test that verifies the injection has happened
+Since all this happens at compile time, with no code seen by you, it is advisable to add a unit test to verify that the injection has happened.
 
     [Test]
     public void EnsureTimestampHasBeenAdded()
@@ -89,7 +89,7 @@ Since all this happens at the compile time with no code seen by you it is advisa
         Assert.AreEqual(DateTime.UtcNow.ToString("yyyy-MM-dd"), timestamp);
     }
 
-Note that this test makes the assumption the test are being run on the same day as the compile of the target assembly. Feel free to change the tolerance of that assumption.
+Note that this test makes the assumption that the test is being run on the same day as the compilation of the target assembly. Feel free to change the tolerance of that assumption.
 
 ## Nuget 
 
