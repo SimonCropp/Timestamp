@@ -46,7 +46,7 @@ namespace Timestamp
 using Timestamp;
 [assembly: Timestamp(""{0}"")]
 
-", DateTime.UtcNow.ToString("yyyy-MM-dd"));
+", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"));
 
             var timestampAttribute = Resource.AsString("TimestampAttribute.cs");
 
