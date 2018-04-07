@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using NUnit.Framework;
+using Xunit;
 
 public class TimestampHelper
 {
@@ -34,10 +34,10 @@ public class TimestampHelper
     }
 
 
-    [Test]
+    [Fact]
     public void EnsureTimestampHasBeenAdded()
     {
         var timestamp = RetrieveTimestamp();
-        Assert.AreEqual(DateTime.UtcNow.ToString("yyyy-MM-dd"), timestamp);
+        Assert.Equal("2007-04-30", timestamp);
     }
 }

@@ -3,7 +3,7 @@
     [System.AttributeUsage(System.AttributeTargets.Assembly)]
     class TimestampAttribute : System.Attribute
     {
-        public string Timestamp { get; private set; }
+        public string Timestamp { get; }
 
         public TimestampAttribute(string timestamp)
         {

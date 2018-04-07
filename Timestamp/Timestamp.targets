@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Choose>
+    <When Condition="'$(MSBuildRuntimeType)'=='Core'">
+      <PropertyGroup>
+        <TaskPath>$(MSBuildThisFileDirectory)..\netstandardtask\Timestamp.dll</TaskPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <TaskPath>$(MSBuildThisFileDirectory)..\netclassictask\Timestamp.dll</TaskPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <UsingTask
+      TaskName="Timestamp.AddTimestamp"
+      AssemblyFile="$(TaskPath)" />
+
+    <Target Name="AddTimestamp"
+            BeforeTargets="CoreCompile">
+      <Timestamp.AddTimestamp ProjectFile="$(ProjectPath)">
+          <Output
+            TaskParameter="TimestampAttributeTempFilePath"
+            PropertyName="TimestampAttributeTempFilePath" />
+        </Timestamp.AddTimestamp>
+        <ItemGroup>
+            <Compile Include="$(TimestampAttributeTempFilePath)" />
+        </ItemGroup>
+    </Target>
+
+</Project>
