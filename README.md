@@ -5,7 +5,7 @@ Adds a build timestamp to an assembly.
 
 ### What's wrong with using Modified or Created date
 
-File timestamps are not reliable since they can changed by various mechanisms, for example when being transferred over the wire.
+File timestamps are not reliable since they can be changed by various mechanisms, for example when being transferred over the wire.
 
 ## What it actually does
 
@@ -29,17 +29,17 @@ Note that this is done at compile time and you will not see the code in your pro
 
 ### Adds the following attribute to your assembly
 
-    [assembly: Timestamp("yyyy-MM-dd")]
+    [assembly: Timestamp("yyyy-MM-ddTHH:mm:ss.fffZ")]
 
-So for example if you compile your assembly on the 20th of November 2013 the timestamp will be.
+So for example, if you compile your assembly on the 10th of September 2018 the timestamp will be
 
-    [assembly: Timestamp("2013-11-20")]
+    [assembly: Timestamp("2018-09-10T16:24:59.417Z")]
 
 ### It is UTC
 
 Note that the code that generates the timestamp uses UTC. 
 
-    DateTime.UtcNow.ToString("yyyy-MM-dd")
+    DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
 
 ## How do I access the value
 
@@ -74,7 +74,7 @@ If you are on .net 4.5 you can make use of the [AttributeType](http://msdn.micro
     public static DateTime RetrieveTimestampAsDateTime()
     {
         var timestamp = RetrieveTimestamp();
-        return DateTime.ParseExact(timestamp, "yyyy-MM-dd", null, DateTimeStyles.AssumeUniversal)
+        return DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.fffZ", null, DateTimeStyles.AssumeUniversal)
             .ToUniversalTime();
     }
 
@@ -86,7 +86,7 @@ Since all this happens at compile time, with no code seen by you, it is advisabl
     public void EnsureTimestampHasBeenAdded()
     {
         var timestamp = RetrieveTimestamp();
-        Assert.AreEqual(DateTime.UtcNow.ToString("yyyy-MM-dd"), timestamp);
+        Assert.AreEqual(DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), timestamp);
     }
 
 Note that this test makes the assumption that the test is being run on the same day as the compilation of the target assembly. Feel free to change the tolerance of that assumption.
