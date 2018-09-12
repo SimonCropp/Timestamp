@@ -36,7 +36,6 @@
       <PackagePath>build\</PackagePath>
     </Content>
   </ItemGroup>
-  <ItemGroup>
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
       <NetClassicTaskFilesToInclude Include="bin\$(Configuration)\net46\Timestamp.dll" />
