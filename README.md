@@ -6,7 +6,14 @@ Adds a build timestamp to an assembly.
 **This project is supported by the community via [Patreon sponsorship](https://www.patreon.com/join/simoncropp). If you are using this project to deliver business value or build commercial software it is expected that you will provide support [via Patreon](https://www.patreon.com/join/simoncropp).**
 
 
-### What's wrong with using Modified or Created date
+## The nuget package [![NuGet Status](http://img.shields.io/nuget/v/Timestamp.svg?style=flat)](https://www.nuget.org/packages/Timestamp/)
+
+https://nuget.org/packages/Timestamp/
+
+    PM> Install-Package Timestamp
+
+
+## What's wrong with using Modified or Created date
 
 File timestamps are not reliable since they can be changed by various mechanisms, for example when being transferred over the wire.
 
