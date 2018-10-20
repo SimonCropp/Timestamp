@@ -3,103 +3,130 @@ Timestamp
 
 Adds a build timestamp to an assembly.
 
+**This project is supported by the community via [Patreon sponsorship](https://www.patreon.com/join/simoncropp). If you are using this project to deliver business value or build commercial software it is expected that you will provide support [via Patreon](https://www.patreon.com/join/simoncropp). If you do not feel this project is worth supporting, to ensure its long term existence, perhaps you should find an alternative tool or build the functionality yourself.**
+
+
 ### What's wrong with using Modified or Created date
 
 File timestamps are not reliable since they can be changed by various mechanisms, for example when being transferred over the wire.
+
 
 ## What it actually does
 
 Note that this is done at compile time and you will not see the code in your project.
 
+
 ### Adds the following class to your assembly
 
-	namespace Timestamp
-	{
-	    [System.AttributeUsage(System.AttributeTargets.Assembly)]
-	    class TimestampAttribute : System.Attribute
-	    {
-	        public string Timestamp { get; private set; }
-	
-	        public TimestampAttribute(string timestamp)
-	        {
-	            Timestamp = timestamp;
-	        }
-	    }
-	}
+```csharp
+namespace Timestamp
+{
+    [System.AttributeUsage(System.AttributeTargets.Assembly)]
+    class TimestampAttribute : System.Attribute
+    {
+        public string Timestamp { get; private set; }
+
+        public TimestampAttribute(string timestamp)
+        {
+            Timestamp = timestamp;
+        }
+    }
+}
+```
+
 
 ### Adds the following attribute to your assembly
 
-    [assembly: Timestamp("yyyy-MM-ddTHH:mm:ss.fffZ")]
+```csharp
+[assembly: Timestamp("yyyy-MM-ddTHH:mm:ss.fffZ")]
+```
 
 So for example, if you compile your assembly on the 10th of September 2018 the timestamp will be
 
-    [assembly: Timestamp("2018-09-10T16:24:59.417Z")]
+```csharp
+[assembly: Timestamp("2018-09-10T16:24:59.417Z")]
+```
+
 
 ### It is UTC
 
 Note that the code that generates the timestamp uses UTC. 
 
-    DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
+```csharp
+DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
+```
 
 ## How do I access the value
 
 In standard .net you can use the following
 
-    public static string RetrieveTimestamp()
-    {
-        var attribute = Assembly.GetExecutingAssembly()
-            .GetCustomAttributes(false)
-            .First(x => x.GetType().Name == "TimestampAttribute");
+```csharp
+public static string RetrieveTimestamp()
+{
+    var attribute = Assembly.GetExecutingAssembly()
+        .GetCustomAttributes(false)
+        .First(x => x.GetType().Name == "TimestampAttribute");
 
-        return (string) attribute.GetType()
-            .GetProperty("Timestamp")
-            .GetValue(attribute);
-    }
-
+    return (string) attribute.GetType()
+        .GetProperty("Timestamp")
+        .GetValue(attribute);
+}
+```
 
 If you are on .net 4.5 you can make use of the [AttributeType](http://msdn.microsoft.com/en-us/library/system.reflection.customattributedata.attributetype.aspx) property use the below code. It will be a little faster due to less reflection.
 
 
-    public static string RetrieveTimestamp()
-    {
-        var attribute = Assembly.GetExecutingAssembly()
-            .GetCustomAttributesData()
-            .First(x => x.AttributeType.Name == "TimestampAttribute");
+```csharp
+public static string RetrieveTimestamp()
+{
+    var attribute = Assembly.GetExecutingAssembly()
+        .GetCustomAttributesData()
+        .First(x => x.AttributeType.Name == "TimestampAttribute");
 
-        return (string)attribute.ConstructorArguments.First().Value;
-    }
+    return (string)attribute.ConstructorArguments.First().Value;
+}
+```
+
 
 ### What if I need a `DateTime` 
 
-    public static DateTime RetrieveTimestampAsDateTime()
-    {
-        var timestamp = RetrieveTimestamp();
-        return DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.fffZ", null, DateTimeStyles.AssumeUniversal)
-            .ToUniversalTime();
-    }
+```csharp
+public static DateTime RetrieveTimestampAsDateTime()
+{
+    var timestamp = RetrieveTimestamp();
+    return DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.fffZ", null, DateTimeStyles.AssumeUniversal)
+        .ToUniversalTime();
+}
+```
+
 
 ## How do I test that it has worked
 
 Since all this happens at compile time, with no code seen by you, it is advisable to add a unit test to verify that the injection has happened.
 
-    [Test]
-    public void EnsureTimestampHasBeenAdded()
-    {
-        var timestamp = RetrieveTimestamp();
-        Assert.AreEqual(DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), timestamp);
-    }
+```csharp
+[Test]
+public void EnsureTimestampHasBeenAdded()
+{
+    var timestamp = RetrieveTimestamp();
+    Assert.AreEqual(DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), timestamp);
+}
+```
 
 Note that this test makes the assumption that the test is being run on the same day as the compilation of the target assembly. Feel free to change the tolerance of that assumption.
 
-## Nuget 
+
+## Nuget
 
 Nuget package http://nuget.org/packages/Timestamp 
 
 To Install from the Nuget Package Manager Console 
-    
-    PM> Install-Package Timestamp
+
+```powershell
+PM> Install-Package Timestamp
+```
+
 
 ## Icon
 
 <a href="http://thenounproject.com/noun/mayan-calendar/#icon-No10219" target="_blank">Mayan Calendar</a> designed by <a href="http://thenounproject.com/Aleks1416" target="_blank">Arturo Alejandro Romo Escartin</a> from The Noun Project
-
