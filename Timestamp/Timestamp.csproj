@@ -6,8 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Simon Cropp</Authors>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-    <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Simon Cropp. All rights reserved</Copyright>
     <PackageTags>Timestamp, Assembly</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/Timestamp/master/package_icon.png</PackageIconUrl>
