@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
     <NoWarn>CS1591</NoWarn>
     <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile Condition="'$(Configuration)'=='Release'">true</GenerateDocumentationFile>
@@ -38,9 +38,7 @@
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
       <NetClassicTaskFilesToInclude Include="bin\$(Configuration)\net46\Timestamp.dll" />
-      <NetClassicTaskFilesToInclude Include="bin\$(Configuration)\net46\Timestamp.pdb" />
       <NetStandardTaskFilesToInclude Include="bin\$(Configuration)\netstandard2.0\Timestamp.dll" />
-      <NetStandardTaskFilesToInclude Include="bin\$(Configuration)\netstandard2.0\Timestamp.pdb" />
     </ItemGroup>
     <CreateItem Include="@(NetClassicTaskFilesToInclude)" AdditionalMetadata="PackagePath=netclassictask">
       <Output TaskParameter="Include" ItemName="TfmSpecificPackageFile" />
