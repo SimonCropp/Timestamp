@@ -9,10 +9,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Simon Cropp. All rights reserved</Copyright>
     <PackageTags>Timestamp, Assembly</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/Timestamp/master/package_icon.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/Timestamp/master/src/package_icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/SimonCropp/Timestamp</PackageProjectUrl>
     <Description>Stamps an assembly with a Timestamp.</Description>
-    <PackageOutputPath>..\nugets</PackageOutputPath>
+    <PackageOutputPath>..\..\nugets</PackageOutputPath>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeTaskFiles</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>

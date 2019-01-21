@@ -33,7 +33,6 @@ public class TimestampHelper
             .ToUniversalTime();
     }
 
-
     [Fact]
     public void EnsureTimestampHasBeenAdded()
     {

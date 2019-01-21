@@ -125,9 +125,9 @@ Note that this test makes the assumption that the test is being run on the same 
 
 ## Nuget
 
-Nuget package http://nuget.org/packages/Timestamp 
+Nuget package http://nuget.org/packages/Timestamp
 
-To Install from the Nuget Package Manager Console 
+To Install from the NuGet Package Manager Console
 
 ```powershell
 PM> Install-Package Timestamp
