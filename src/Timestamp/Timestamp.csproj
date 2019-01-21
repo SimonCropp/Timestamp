@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
     <NoWarn>CS1591</NoWarn>
     <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile Condition="'$(Configuration)'=='Release'">true</GenerateDocumentationFile>
@@ -35,7 +35,7 @@
       <PackagePath>build\</PackagePath>
     </Content>
   </ItemGroup>
-  <Target Name="IncludeTaskFiles">
+  <Target Name="IncludeTaskFiles" Condition="'$(TargetFramework)'=='Net46'">
     <ItemGroup>
       <NetClassicTaskFilesToInclude Include="bin\$(Configuration)\net46\Timestamp.dll" />
       <NetStandardTaskFilesToInclude Include="bin\$(Configuration)\netstandard2.0\Timestamp.dll" />
