@@ -17,7 +17,7 @@
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeTaskFiles</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
   <ItemGroup Condition="$(TargetFramework) == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="15.9.20" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="16.0.461" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup Condition="$(TargetFramework) == 'net46'">
     <Reference Include="Microsoft.Build" />
