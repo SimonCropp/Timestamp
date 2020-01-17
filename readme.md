@@ -132,6 +132,11 @@ PM> Install-Package Timestamp
 ```
 
 
+## Security contact information
+
+To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
+
+
 ## Icon
 
 <a href="http://thenounproject.com/noun/mayan-calendar/#icon-No10219" target="_blank">Mayan Calendar</a> designed by <a href="http://thenounproject.com/Aleks1416" target="_blank">Arturo Alejandro Romo Escartin</a> from The Noun Project
