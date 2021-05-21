@@ -3,8 +3,6 @@ Timestamp
 
 Adds a build timestamp to an assembly.
 
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-timestamp?utm_source=nuget-timestamp&utm_medium=referral&utm_campaign=enterprise).
-
 
 ## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/Timestamp.svg?style=flat)](https://www.nuget.org/packages/Timestamp/)
 
@@ -132,11 +130,6 @@ To Install from the NuGet Package Manager Console
 ```powershell
 PM> Install-Package Timestamp
 ```
-
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
