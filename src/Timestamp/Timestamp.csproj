@@ -35,6 +35,9 @@
       <PackagePath>build\</PackagePath>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ProjectDefaults" Version="1.0.59" PrivateAssets="All" />
+  </ItemGroup>
   <Target Name="IncludeTaskFiles" Condition="'$(TargetFramework)'=='Net46'">
     <ItemGroup>
       <NetClassicTaskFilesToInclude Include="bin\$(Configuration)\net46\Timestamp.dll" />
