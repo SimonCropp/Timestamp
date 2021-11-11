@@ -5,13 +5,13 @@ using Microsoft.Build.Utilities;
 
 namespace Timestamp;
 
-public class AddTimestamp : Task
+public class AddTimestamp : Microsoft.Build.Utilities.Task
 {
     [Required]
-    public string ProjectFile { get; set; }
+    public string ProjectFile { get; set; } = null!;
 
     [Output]
-    public string TimestampAttributeTempFilePath { get; set; }
+    public string TimestampAttributeTempFilePath { get; set; } = null!;
 
     public override bool Execute()
     {
