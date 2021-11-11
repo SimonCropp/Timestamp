@@ -28,14 +28,10 @@
   <ItemGroup>
     <Compile Remove="TimestampAttribute.cs" />
     <EmbeddedResource Include="TimestampAttribute.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Timestamp.targets">
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="ProjectDefaults" Version="1.0.61" PrivateAssets="all" />
   </ItemGroup>
   <Target Name="IncludeTaskFiles" Condition="'$(TargetFramework)'=='Net46'">
