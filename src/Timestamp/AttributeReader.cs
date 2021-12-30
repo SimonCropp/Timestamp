@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-public static class AttributeReader
+﻿public static class AttributeReader
 {
     public static string TimestampAttribute;
 

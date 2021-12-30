@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-public static class TempFileTracker
+﻿public static class TempFileTracker
 {
     public static string TempPath;
 

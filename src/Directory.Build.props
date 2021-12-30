@@ -3,9 +3,5 @@
   <PropertyGroup>
     <Version>1.0.2</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <LangVersion>latest</LangVersion>
-    <DebugType>embedded</DebugType>
-    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 </Project>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using Microsoft.Build.Framework;
-using Microsoft.Build.Utilities;
+﻿using Microsoft.Build.Framework;
 
 namespace Timestamp;
 

@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Reflection;
-using Xunit;
+﻿using Xunit;
 
 public class AttributeRetrievalTests
 {
