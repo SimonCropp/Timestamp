@@ -1,17 +1,12 @@
 # Auto detect text files and perform LF normalization
-* text 
+* text
+.editorconfig -text
+*.sln.DotSettings -text
 
 # Don't check these into the repo as LF to work around TeamCity bug
-*.xml     -text 
+*.xml     -text
 *.targets -text
 
-# Custom for Visual Studio
-*.cs     diff=csharp
-*.sln    merge=union
-*.csproj merge=union
-*.vbproj merge=union
-*.fsproj merge=union
-*.dbproj merge=union
 
 # Denote all files that are truly binary and should not be modified.
 *.dll binary
@@ -20,4 +15,3 @@
 *.ico binary
 *.snk binary
 *.pdb binary
-*.svg binary
