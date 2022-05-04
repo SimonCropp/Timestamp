@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.78" PrivateAssets="all" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.4" PrivateAssets="All" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <ProjectReference Include="..\Timestamp\Timestamp.csproj" />
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
