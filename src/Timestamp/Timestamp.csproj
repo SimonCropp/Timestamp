@@ -34,7 +34,7 @@
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
-    <PackageReference Include="ProjectDefaults" Version="1.0.78" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.79" PrivateAssets="all" />
   </ItemGroup>
   <Target Name="IncludeTaskFiles" Condition="'$(TargetFramework)'=='Net46'">
     <ItemGroup>
