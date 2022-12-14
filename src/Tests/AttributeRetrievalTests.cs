@@ -9,7 +9,7 @@ public class AttributeRetrievalTests
             .GetCustomAttributes(false)
             .First(x => x.GetType().Name == "TimestampAttribute");
 
-        var timestamp =  (string) attribute.GetType().GetProperty("Timestamp").GetValue(attribute);
+        var timestamp =  (string) attribute.GetType().GetProperty("Timestamp")!.GetValue(attribute)!;
         Assert.Equal("2007-04-30", timestamp);
     }
 
@@ -20,7 +20,7 @@ public class AttributeRetrievalTests
             .GetCustomAttributesData()
             .First(x => x.AttributeType.Name == "TimestampAttribute");
 
-        var timestamp = (string)attribute.ConstructorArguments.First().Value;
+        var timestamp = (string)attribute.ConstructorArguments.First().Value!;
         Assert.Equal("2007-04-30", timestamp);
     }
 }

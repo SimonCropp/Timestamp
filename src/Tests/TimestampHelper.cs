@@ -10,8 +10,8 @@ public class TimestampHelper
             .First(x => x.GetType().Name == "TimestampAttribute");
 
         return (string) attribute.GetType()
-            .GetProperty("Timestamp")
-            .GetValue(attribute);
+            .GetProperty("Timestamp")!
+            .GetValue(attribute)!;
     }
 
     public static string RetrieveTimestamp45()
@@ -20,7 +20,7 @@ public class TimestampHelper
             .GetCustomAttributesData()
             .First(x => x.AttributeType.Name == "TimestampAttribute");
 
-        return (string)attribute.ConstructorArguments.First().Value;
+        return (string)attribute.ConstructorArguments.First().Value!;
     }
 
     public static DateTime RetrieveTimestampAsDateTime()
