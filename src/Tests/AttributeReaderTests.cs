@@ -3,8 +3,6 @@
 public class AttributeReaderTests
 {
     [Fact]
-    public void TimestampAttribute()
-    {
+    public void TimestampAttribute() =>
         Assert.NotNull(AttributeReader.TimestampAttribute);
-    }
 }
