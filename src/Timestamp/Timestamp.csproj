@@ -26,7 +26,6 @@
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
   </ItemGroup>
   <ItemGroup>
-    <Using Remove="System.Net.Http" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
     <Compile Remove="TimestampAttribute.cs" />
     <EmbeddedResource Include="TimestampAttribute.cs" />
