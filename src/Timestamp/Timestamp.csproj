@@ -16,16 +16,8 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeTaskFiles</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
-  <ItemGroup Condition="$(TargetFramework) == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.5.0" PrivateAssets="All" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework) == 'net46'">
-    <Reference Include="Microsoft.Build" />
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="Microsoft.Build.Tasks.v4.0" />
-    <Reference Include="Microsoft.Build.Utilities.v4.0" />
-  </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.5.0" PrivateAssets="All" />
     <PackageReference Include="Polyfill" Version="1.8.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
     <Compile Remove="TimestampAttribute.cs" />
@@ -38,12 +30,8 @@
   </ItemGroup>
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
-      <NetClassicTaskFilesToInclude Include="bin\$(Configuration)\net46\Timestamp.dll" />
       <NetStandardTaskFilesToInclude Include="bin\$(Configuration)\netstandard2.0\Timestamp.dll" />
     </ItemGroup>
-    <CreateItem Include="@(NetClassicTaskFilesToInclude)" AdditionalMetadata="PackagePath=netclassictask">
-      <Output TaskParameter="Include" ItemName="TfmSpecificPackageFile" />
-    </CreateItem>
     <CreateItem Include="@(NetStandardTaskFilesToInclude)" AdditionalMetadata="PackagePath=netstandardtask">
       <Output TaskParameter="Include" ItemName="TfmSpecificPackageFile" />
     </CreateItem>
