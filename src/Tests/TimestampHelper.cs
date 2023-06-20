@@ -7,7 +7,7 @@ public class TimestampHelper
     {
         var attribute = Assembly.GetExecutingAssembly()
             .GetCustomAttributes(false)
-            .First(x => x.GetType().Name == "TimestampAttribute");
+            .First(_ => _.GetType().Name == "TimestampAttribute");
 
         return (string) attribute.GetType()
             .GetProperty("Timestamp")!
@@ -18,7 +18,7 @@ public class TimestampHelper
     {
         var attribute = Assembly.GetExecutingAssembly()
             .GetCustomAttributesData()
-            .First(x => x.AttributeType.Name == "TimestampAttribute");
+            .First(_ => _.AttributeType.Name == "TimestampAttribute");
 
         return (string)attribute.ConstructorArguments.First().Value!;
     }

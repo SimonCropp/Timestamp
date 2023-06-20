@@ -7,7 +7,7 @@ public class AttributeRetrievalTests
     {
         var attribute = Assembly.GetExecutingAssembly()
             .GetCustomAttributes(false)
-            .First(x => x.GetType().Name == "TimestampAttribute");
+            .First(_ => _.GetType().Name == "TimestampAttribute");
 
         var timestamp =  (string) attribute.GetType().GetProperty("Timestamp")!.GetValue(attribute)!;
         Assert.Equal("2007-04-30", timestamp);
@@ -18,7 +18,7 @@ public class AttributeRetrievalTests
     {
         var attribute = Assembly.GetExecutingAssembly()
             .GetCustomAttributesData()
-            .First(x => x.AttributeType.Name == "TimestampAttribute");
+            .First(_ => _.AttributeType.Name == "TimestampAttribute");
 
         var timestamp = (string)attribute.ConstructorArguments.First().Value!;
         Assert.Equal("2007-04-30", timestamp);
