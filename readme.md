@@ -3,6 +3,8 @@ Timestamp
 
 Adds a build timestamp to an assembly.
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 
 ## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/Timestamp.svg?style=flat)](https://www.nuget.org/packages/Timestamp/)
 
