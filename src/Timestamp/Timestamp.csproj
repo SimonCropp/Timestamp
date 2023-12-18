@@ -26,7 +26,7 @@
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
-    <PackageReference Include="ProjectDefaults" Version="1.0.107" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.108" PrivateAssets="all" />
   </ItemGroup>
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
