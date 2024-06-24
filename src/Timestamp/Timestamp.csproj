@@ -18,7 +18,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.10.4" PrivateAssets="All" />
-    <PackageReference Include="Polyfill" Version="5.5.2" PrivateAssets="all" />
+    <PackageReference Include="Polyfill" Version="5.5.3" PrivateAssets="all" />
     <Compile Remove="TimestampAttribute.cs" />
     <EmbeddedResource Include="TimestampAttribute.cs" />
     <Content Include="Timestamp.targets">
