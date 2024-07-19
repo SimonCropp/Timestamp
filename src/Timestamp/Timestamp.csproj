@@ -26,6 +26,8 @@
       <PackagePath>build\</PackagePath>
     </Content>
     <PackageReference Include="ProjectDefaults" Version="1.0.131" PrivateAssets="all" />
+    <!-- explicit to avoid cve -->
+    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
   </ItemGroup>
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
