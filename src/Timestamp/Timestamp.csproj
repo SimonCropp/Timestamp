@@ -25,7 +25,11 @@
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
+<<<<<<< HEAD
     <PackageReference Include="ProjectDefaults" Version="1.0.138" PrivateAssets="all" />
+=======
+    <PackageReference Include="ProjectDefaults" Version="1.0.139" PrivateAssets="all" />
+>>>>>>> 8bdbf96c09adfb7f72bedc5b9e618f314510d1c7
     <!-- explicit to avoid cve -->
     <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
   </ItemGroup>
