@@ -17,15 +17,15 @@
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeTaskFiles</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.11.4" PrivateAssets="All" />
-    <PackageReference Include="Polyfill" Version="7.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.12.6" PrivateAssets="All" />
+    <PackageReference Include="Polyfill" Version="7.2.0" PrivateAssets="all" />
     <Compile Remove="TimestampAttribute.cs" />
     <EmbeddedResource Include="TimestampAttribute.cs" />
     <Content Include="Timestamp.targets">
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
-    <PackageReference Include="ProjectDefaults" Version="1.0.138" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.141" PrivateAssets="all" />
   </ItemGroup>
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
