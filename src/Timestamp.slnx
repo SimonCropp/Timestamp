@@ -1,0 +1,16 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="appveyor.yml" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="Tests/Tests.csproj">
+    <Build Solution="*|x86" Project="false" />
+  </Project>
+  <Project Path="Timestamp/Timestamp.csproj">
+    <Build Solution="*|x86" Project="false" />
+  </Project>
+</Solution>
