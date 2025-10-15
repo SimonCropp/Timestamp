@@ -17,7 +17,7 @@
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeTaskFiles</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.14.8" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.14.28" PrivateAssets="All" />
     <PackageReference Include="Polyfill" Version="8.8.1" PrivateAssets="all" />
     <Compile Remove="TimestampAttribute.cs" />
     <EmbeddedResource Include="TimestampAttribute.cs" />
