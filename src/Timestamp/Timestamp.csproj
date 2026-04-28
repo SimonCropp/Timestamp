@@ -26,7 +26,7 @@
       <PackagePath>build\</PackagePath>
     </Content>
     <PackageReference Include="ProjectDefaults" Version="1.0.158" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" Version="4.1.2" />
+    <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" Version="4.1.5" />
   </ItemGroup>
   <Target Name="IncludeTaskFiles">
     <ItemGroup>
