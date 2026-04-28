@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.158" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.173" PrivateAssets="all" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" PrivateAssets="all" />
     <PackageReference Include="Xunit" Version="2.9.3" />
     <ProjectReference Include="..\Timestamp\Timestamp.csproj" />
