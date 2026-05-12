@@ -1,6 +1,4 @@
-﻿using Xunit;
-
-public class AttributeRetrievalTests
+﻿public class AttributeRetrievalTests
 {
     [Fact]
     public void DotNet4()

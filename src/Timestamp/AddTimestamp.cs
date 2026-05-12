@@ -1,6 +1,4 @@
-﻿using Microsoft.Build.Framework;
-
-namespace Timestamp;
+﻿namespace Timestamp;
 
 public class AddTimestamp : Microsoft.Build.Utilities.Task
 {

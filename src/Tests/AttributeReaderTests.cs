@@ -1,6 +1,4 @@
-﻿using Xunit;
-
-public class AttributeReaderTests
+﻿public class AttributeReaderTests
 {
     [Fact]
     public void TimestampAttribute() =>
