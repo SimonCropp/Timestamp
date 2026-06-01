@@ -1,3 +1,1 @@
-﻿// Global using directives
-
-global using Microsoft.Build.Framework;
+﻿global using Microsoft.Build.Framework;
